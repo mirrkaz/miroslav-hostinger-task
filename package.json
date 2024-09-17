@@ -1,0 +1,37 @@
+{
+  "name": "api-automation-miroslav-hostinger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fixcode": "npm run prettier:fix && npm run lint:fix",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier --check \"./**/*.{js,json,ts}\"",
+    "prettier:fix": "npm run prettier -- --write",
+    "test:userRegistrationWithUsedEmailAddress.test": "mocha --bail ./tests/userRegistrationWithUsedEmailAddress.test.mjs",
+    "test:userRegistrationHappyScenario.test": "mocha --bail ./tests/userRegistrationHappyScenario.test.mjs",
+    "test:userRegistrationWithLeakPassword.test": "mocha --bail ./tests/userRegistrationWithLeakPassword.test.mjs",
+    "test:userRegistrationPasswordNotMeetReq.test": "mocha --bail ./tests/userRegistrationPasswordNotMeetReq.test.mjs",
+    "test:userRegistrationMailNotMeetReq.test": "mocha --bail ./tests/userRegistrationMailNotMeetReq.test.mjs",
+    "test:userRegistrationMailIsEmpty.test": "mocha --bail ./tests/userRegistrationMailIsEmpty.test.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.0.1",
+    "axios": "^1.7.7",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "eslint": "^9.10.0",
+    "eslint-plugin-mocha": "^10.5.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.3.3"
+  }
+}
